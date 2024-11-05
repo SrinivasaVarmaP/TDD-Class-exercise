@@ -1,4 +1,4 @@
-name: Run Unit Tests
+name: Python Tests
 
 on:
   push:
@@ -9,22 +9,27 @@ on:
       - main
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        python-version: [3.8, 3.9, 3.10]  # Specify the versions you want to test on
+
     steps:
-    - name: Checkout Code
-      uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.x'
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
 
-    - name: Install Dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install pytest  
-    - name: Run Tests with Pytest
-      run: |
-        pytest scalc.py
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest  # Install pytest for testing
+
+      - name: Run tests with pytest
+        run: |
+          pytest scalc.py  
