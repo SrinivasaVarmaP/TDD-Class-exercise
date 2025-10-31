@@ -98,17 +98,17 @@ body:
     attributes:
       label: Relevant Docs or References (optional)
       description: Include any architecture docs, diagrams, or previous pipeline configs.
-      placeholder: e.g., [System Diagram](https://example.com/diagram) or [Pipeline Spec](https://docs.example.com)
+      placeholder: e.g., [System Diagram](https://example.com/diagram)
 
   - type: markdown
     attributes:
       value: |
         ---
         ✅ **Submission Checklist**
-        - [ ] I have reviewed the [CI/CD Onboarding Guide](../docs/Onboarding_Guide.pdf).
-        - [ ] I have access to the repository and permissions for integration.
-        - [ ] I understand that DevOps will create follow-up issues if needed.
-        - [ ] I agree to follow the [Code of Conduct](../CODE_OF_CONDUCT.md).
+        - [ ] I have reviewed the [CI/CD Onboarding Guide](../docs/Onboarding_Guide.pdf)
+        - [ ] I have access to the repository and permissions for integration
+        - [ ] I understand that DevOps will create follow-up issues if needed
+        - [ ] I agree to follow the [Code of Conduct](../CODE_OF_CONDUCT.md)
 
         Once submitted, the Internal DevOps Team will:
         1. Review your request  
