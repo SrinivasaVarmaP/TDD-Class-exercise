@@ -1,0 +1,117 @@
+name: OSS/CI-CD Request
+description: Use this form to request CI/CD support or onboarding—tell us who you are and what you need.
+title: "[CI/CD Request]: "
+labels: ["ci-cd", "automation", "request"]
+
+body:
+  - type: input
+    id: team_name
+    attributes:
+      label: Team Name
+      description: Enter your team or project name.
+      placeholder: e.g., Payments Platform / Internal Tools
+    validations:
+      required: true
+
+  - type: input
+    id: requester_name
+    attributes:
+      label: Your Name
+      description: Provide your first and last name.
+    validations:
+      required: true
+
+  - type: input
+    id: tech_lead_email
+    attributes:
+      label: Tech Lead Email
+      description: Provide your email or Slack handle for follow-up.
+      placeholder: e.g., alex@org.com or @alex_dev
+    validations:
+      required: true
+
+  - type: dropdown
+    id: request_type
+    attributes:
+      label: Type of Request
+      description: Select the type of CI/CD support you need.
+      options:
+        - New CI/CD Onboarding
+        - Update Existing Pipeline
+        - Add Deployment Stage (Staging/Prod)
+        - Template or Workflow Improvement
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: project_description
+    attributes:
+      label: Project Overview
+      description: Describe your project briefly and what the CI/CD pipeline should accomplish.
+      placeholder: e.g., Node.js microservice that handles payments and notifications.
+    validations:
+      required: true
+
+  - type: input
+    id: repository_url
+    attributes:
+      label: Repository URL
+      description: Provide your GitHub or internal Git repository link.
+      placeholder: e.g., https://github.com/org/payments-service
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: ci_cd_scope
+    attributes:
+      label: Requested CI/CD Capabilities
+      description: Select all CI/CD features you’d like configured or improved.
+      options:
+        - label: Build & Test Automation
+        - label: Deployment to Staging
+        - label: Deployment to Production
+        - label: Code Quality / Lint Checks
+        - label: Security Scanning (SAST/DAST)
+        - label: Container Build & Push
+        - label: Release Management
+        - label: Other (describe below)
+
+  - type: textarea
+    id: custom_requirements
+    attributes:
+      label: Custom Requirements or Notes
+      description: Add any specific needs (tools, runners, secrets, environment configs, etc.).
+      placeholder: e.g., Need GitHub Actions workflow with AWS ECR deployment and secret management via Vault.
+
+  - type: input
+    id: target_date
+    attributes:
+      label: Target Completion Date
+      description: When would you like CI/CD setup or updates completed?
+      placeholder: e.g., November 20, 2025
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional_links
+    attributes:
+      label: Relevant Docs or References (optional)
+      description: Include any architecture docs, diagrams, or previous pipeline configs.
+      placeholder: e.g., [System Diagram](https://example.com/diagram) or [Pipeline Spec](https://docs.example.com)
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ✅ **Submission Checklist**
+        - [ ] I have reviewed the [CI/CD Onboarding Guide](../docs/Onboarding_Guide.pdf).
+        - [ ] I have access to the repository and permissions for integration.
+        - [ ] I understand that DevOps will create follow-up issues if needed.
+        - [ ] I agree to follow the [Code of Conduct](../CODE_OF_CONDUCT.md).
+
+        Once submitted, the Internal DevOps Team will:
+        1. Review your request  
+        2. Plan the CI/CD setup or update  
+        3. Open PRs or issues in your repo for implementation  
+        4. Conduct a walkthrough session after integration
